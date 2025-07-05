@@ -5,14 +5,11 @@ import math
 WIDTH, HEIGHT = 800, 800
 SCALE = 100  
 FPS = 30
-
-
 screen = turtle.Screen()
 screen.setup(WIDTH, HEIGHT)
 screen.bgcolor("black")
 screen.title("4D Tesseract Projection")
 screen.tracer(0)  
-
 pen = turtle.Turtle()
 pen.hideturtle()
 pen.speed(0)
@@ -34,13 +31,9 @@ def generate_tesseract_vertices():
 
 def rotate4d(point, angle_xw, angle_yz):
     x, y, z, w = point
-
-    
     cos_xw = math.cos(angle_xw)
     sin_xw = math.sin(angle_xw)
     x_, w_ = x * cos_xw - w * sin_xw, x * sin_xw + w * cos_xw
-
-    
     cos_yz = math.cos(angle_yz)
     sin_yz = math.sin(angle_yz)
     y_, z_ = y * cos_yz - z * sin_yz, y * sin_yz + z * cos_yz
