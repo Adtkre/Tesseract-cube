@@ -54,7 +54,7 @@ def project4d_to_3d(point4d, perspective=2.5):
     factor = w_offset / (w_offset - w)
     return [x * factor, y * factor, z * factor]
 
-#
+
 def project3d_to_2d(point3d, perspective=4.0):
     x, y, z = point3d
     z_offset = perspective
@@ -94,7 +94,7 @@ def animate(angle_xw=0.0, angle_yz=0.0):
         v_rot = rotate4d(v, angle_xw, angle_yz)
         v_3d = project4d_to_3d(v_rot)
         v_2d = project3d_to_2d(v_3d)
-        # Center and scale
+     
         x = v_2d[0] * SCALE + WIDTH // 2
         y = v_2d[1] * SCALE + HEIGHT // 2
         projected_points.append((x - WIDTH // 2, y - HEIGHT // 2))
